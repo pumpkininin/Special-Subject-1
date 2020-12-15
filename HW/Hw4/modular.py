@@ -66,7 +66,6 @@ def find_x(a, b, n):
     print("GCD:",gcd)
     for i in range(2,len(dividend_arr)+1):
         print("step {5:3d}: {0:3d} = {1:3d}*({2:3d}) + {3:3d}*({4:3d})".format(gcd, dividend_arr[-i],s_arr[-i], divisor_arr[-i], r_arr[-i],i-1))
-    print(result)
     print("X0 = {0:5d}*{1:5d}/{2:5d} = {3:5d} (mod {4:5d}/{2:5d})".format(r_arr[0],b,gcd, result[0],dividend_arr[0]))
     print("All posibble solution: ", result)
 
