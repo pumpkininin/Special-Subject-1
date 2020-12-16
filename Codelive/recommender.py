@@ -55,6 +55,7 @@ def recommed():
                 for i in range(len(value)):
                     sim += rating_data[user][i] * rating_data[key][i]
                 similarity.append((sim, key))
+                #sort by value first then sort by name
                 similarity.sort(key = lambda  x:x[0], reverse=True)
         most_similar = similarity[:3]
         average_rating = [0 for i in range(len(data))]
@@ -72,6 +73,7 @@ def recommed():
         book_rating = []
         for i in range(len(average_rating)):
             book_rating.append((average_rating[i], data[i], ))
+        #sort by rating score of book then sort by name
         book_rating.sort(key = lambda x:(x[0],x[1]), reverse=True)
         print("----------------------------------------------------")
         print("Recommendation: ")
@@ -79,6 +81,7 @@ def recommed():
             print(i[1] + ":" + str(i[0]))
 def averages():
     averages = read_file()[3]
+    # sort by average rating score of book then sort by name
     averages.sort(key=lambda x: (x[1],x[0]), reverse=True)
     print("----------------------------------------------------")
     print("Recommendation: ")
